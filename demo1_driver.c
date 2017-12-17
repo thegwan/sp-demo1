@@ -31,10 +31,10 @@ int main()
     // add some keys
     status = AddKeyToChain(oKeyChain, "0", "00");
     if (status) printf("added key!\n");
-    sleep(1);
+    // sleep(1);
     status = AddKeyToChain(oKeyChain, "0", "01");
     if (status) printf("added key!\n");
-    sleep(1);
+    // sleep(1);
     status = AddKeyToChain(oKeyChain, "00", "000");
     if (status) printf("added key!\n");
 
