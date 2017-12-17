@@ -14,6 +14,8 @@ int main()
     unsigned long umk;
     int status;
     int c;
+    unsigned int curr;
+    unsigned int stop;
     FILE *fptr;
 
     // load umk with the value stored in CSR 0x050
@@ -21,7 +23,7 @@ int main()
         "csrr %0, 0x050;\n"
         : "=r" (umk));
     
-    // umk = 0xefcdab8967452301;
+    //    umk = 0xefcdab8967452301;
 
     // initialize a keychain
     KeyChain_T oKeyChain;
@@ -31,10 +33,28 @@ int main()
     // add some keys
     status = AddKeyToChain(oKeyChain, "0", "00");
     if (status) printf("added key!\n");
-    // sleep(1);
+
+    // sleep(1)
+    curr = time(0);
+    stop = curr + 1;
+    while (1) {
+      curr = time(0);
+      if (curr >= stop)
+	break;
+    }
+    
     status = AddKeyToChain(oKeyChain, "0", "01");
     if (status) printf("added key!\n");
-    // sleep(1);
+
+    // sleep(1)
+    curr = time(0);
+    stop = curr + 1;
+    while (1) {
+      curr = time(0);
+      if (curr >= stop)
+	break;
+    }
+    
     status = AddKeyToChain(oKeyChain, "00", "000");
     if (status) printf("added key!\n");
 
