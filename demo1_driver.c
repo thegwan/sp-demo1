@@ -18,7 +18,7 @@ int main()
     unsigned int stop;
     FILE *fptr;
 
-    load umk with the value stored in CSR 0x050
+    // load umk with the value stored in CSR 0x050
     __asm__ __volatile__(
         "csrr %0, 0x050;\n"
         : "=r" (umk));

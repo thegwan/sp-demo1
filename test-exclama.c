@@ -17,7 +17,7 @@ int main()
     printf("fptr is null\n");
     return 0;
   }
-  while ((c = fgetc(fptr)) != EOF) {
+  while ((c = fgetc(fptr)) != '.') {
     printf("%c", c);
   }
   fclose(fptr);
